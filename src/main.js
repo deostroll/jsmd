@@ -43,7 +43,14 @@ function ViewModel() {
 
     self.code.subscribe(function(source){
       var ast = getProgramAst(source);
-      console.log(JSON.stringify(ast, null, 2));
+      // console.log(JSON.stringify(ast, null, 2));
+      $.ajax({
+        url: '/ast',
+        data: {
+          ast : JSON.stringify(ast, null, 2)
+        },
+        method: 'POST',
+      }).then(() => console.log('done...'));
     });
 
   }, false);

@@ -6,3 +6,9 @@ function Entity(name) {
 Entity.prototype.add = function(fieldInfo) {
   this.field.push(fieldInfo);
 };
+
+var EntityBuilder = {
+  walk: function(ast) {
+    
+  }
+}

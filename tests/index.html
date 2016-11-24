@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="vendor.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div id="mocha"><p><a href=".">Index</a></p></div>
+    <div id="messages"></div>
+    <div id="fixtures"></div>
+    <script src="vendor.js"></script>
+    <script src="main.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <script src="all.js"></script>
+    <script>mocha.run();</script>
+  </body>
+</html>
