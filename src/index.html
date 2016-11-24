@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Esprima tutorial</title>
+    <link rel="stylesheet" href="vendor.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>Model Designer</h1>
+      <p>Type code and generate diagrammatic model out of it...</p>
+      <div class="row">
+        <div class="col-sm-6">
+          <a href="javascript:void(0)" class="btn btn-default" data-bind="click: browse"><span class="glyphicon glyphicon-hdd"></span>&nbsp;Browse...</a>
+          <br>
+          <input type="file" id="fileInput" style="display:none" name="" value="">
+          <textarea id="codeEditor" data-bind="value: code"></textarea>
+        </div>
+        <div class="col-sm-6">
+          <div id="myCanvas">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="vendor.js" charset="utf-8"></script>
+    <script src="entity.js" charset="utf-8"></script>
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>
