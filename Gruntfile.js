@@ -79,6 +79,9 @@ module.exports = function(grunt) {
         'tests/web/all.js' : [
           'tests/files/*.js'
         ]
+      },
+      options: {
+        sourceMap: true
       }
     },
     // 'test-main' : {

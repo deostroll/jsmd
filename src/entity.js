@@ -7,7 +7,7 @@ Entity.prototype.add = function(fieldInfo) {
   this.field.push(fieldInfo);
 };
 
-var EntityBuilder = {
+var ModelBuilder = {
   walk: function(ast) {
     
   }
