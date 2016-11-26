@@ -1,0 +1,2 @@
+ - **ast.json** : a model with customer entity
+ - **data2.json** : a model with customer entity with one field

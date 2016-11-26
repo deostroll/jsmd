@@ -84,13 +84,6 @@ module.exports = function(grunt) {
         sourceMap: true
       }
     },
-    // 'test-main' : {
-    //   files: [
-    //     'src/*.js',
-    //     'src/main.js',
-    //     '!src/sample.js'
-    //   ]
-    // }
   };
 
   var copyConfig = {
@@ -101,14 +94,11 @@ module.exports = function(grunt) {
           flatten: true,
           src: ['src/*', '!src/*.js', 'src/sample.js'],
           dest: 'web'
-        }
-      ]
-    },
-    vendor: {
-      files: [
+        },
         {
           expand: true,
           flatten: true,
+          //bootstrap fonts
           src: 'node_modules/bootstrap/dist/fonts/*',
           dest: 'web/fonts'
         }
@@ -121,6 +111,18 @@ module.exports = function(grunt) {
           flatten: true,
           src: 'src/*',
           dest: 'build'
+        },
+        {
+          expand: true,
+          flatten: true,
+          src: ['src/*', '!src/*.js', 'src/sample.js'],
+          dest: '<%= dist %>'
+        },
+        {
+          expand: true,
+          flatten: true,
+          src: 'node_modules/bootstrap/dist/fonts/*',
+          dest: '<%= dist %>/fonts'
         }
       ]
     },
@@ -138,21 +140,23 @@ module.exports = function(grunt) {
 
   var watchConfig = {
     dev: {
-      files: ['src/*'],
-      tasks: ['copy:dev'],
+      files: ['src/*', 'Gruntfile.js', 'tests/files/*.js'],
+      tasks: ['test', 'copy:dev', 'concat:dev'],
       options: {
         livereload: '<%= connect.dev.options.livereload %>'
       }
     },
-    gruntfile: {
-      files: ['Gruntfile.js'],
-      tasks: ['concat', 'copy']
-    },
-    test: {
-      files: ['tests/files/*.js', 'src/*.js', '!src/sample.js'],
-      tasks: ['concat:test'],
+    // test: {
+    //   files: ['tests/files/*.js', 'src/*.js', '!src/sample.js', 'tests/index.html', 'Gruntfile.js'],
+    //   tasks: []
+    // }
+  };
+
+  var mochaConfig = {
+    test : {
       options: {
-        livereload: '<%= connect.test.options.livereload %>'
+        urls: ['http://localhost:4583/'],
+        log: true
       }
     }
   };
@@ -165,19 +169,6 @@ module.exports = function(grunt) {
         base: 'web',
         hostname: 'localhost',
         middleware: function(connect, options, middlewares) {
-
-          // middlewares.unshift(bodyParser.urlencoded({extended: true}));
-          // middlewares.push(function(req, res) {
-          //   console.log('method:', req.method);
-          //   if (req.method === 'POST') {
-          //     console.log('Body:', req.body);
-          //   }
-          // })
-
-          // var postHandler = connect().use('/ast', function(req, res) {
-          //   console.log('post handler');
-          // });
-          // return [middlewares, postHandler];
           middlewares.unshift(enableREST);
           return middlewares;
         }
@@ -186,20 +177,28 @@ module.exports = function(grunt) {
     test: {
       options: {
         port: 4583,
-        livereload: 11236,
         base: ['tests/web', 'tests/data']
+      }
+    },
+    testserve: {
+      options: {
+        port: 4584,
+        base: ['tests/web', 'tests/data'],
+        keepalive: true
       }
     }
   };
 
   grunt.initConfig({
+    dist: 'build',
     concat: concatConfig,
     copy: copyConfig,
     watch: watchConfig,
-    connect: connectConfig
+    connect: connectConfig,
+    mocha: mochaConfig
   });
 
   grunt.registerTask('build', ['concat:build', 'copy:build']);
-  grunt.registerTask('default', ['concat:dev', 'copy:dev', 'copy:vendor', 'connect', 'watch']);
-  grunt.registerTask('test', ['concat:test', 'copy:test', 'watch:test'])
+  grunt.registerTask('default', ['concat:dev', 'copy:dev', 'connect:dev', 'watch']);
+  grunt.registerTask('test', ['concat:test', 'copy:test', 'connect:test', 'mocha']);
 };
