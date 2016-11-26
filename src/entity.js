@@ -43,7 +43,7 @@ ModelBuilder.parseVariableDeclaration = function parseVariableDeclaration(ast) {
   console.assert(ast.type === 'VariableDeclaration');
   ast.declarations.forEach(function(dec) {
     var entity = self.parseVariableDeclarator(dec);
-    console.log(JSON.stringify(entity));
+    // console.log(JSON.stringify(entity));
     self.entities.push(entity);
   });
 }
