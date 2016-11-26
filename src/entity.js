@@ -60,9 +60,9 @@ ModelBuilder.parseVariableDeclarator = function parseVariableDeclarator(ast) {
       entity.fields = fields;
       self.entities.push(entity);
     }
-    else if (ast.init.type === 'ArrayExpression') {
-      self.name = ast.id.name;
-    }
+    // else if (ast.init.type === 'ArrayExpression') {
+    //   self.name = ast.id.name;
+    // }
     else {
       throw new Error('VariableDeclarator parsing: Unknown init type: ' + ast.init.type);
     }
@@ -70,7 +70,7 @@ ModelBuilder.parseVariableDeclarator = function parseVariableDeclarator(ast) {
   else {
     throw new Error('VariableDeclarator has no init')
   }
-}
+};
 
 ModelBuilder.parseObjectExpression = function parseObjectExpression(ast, firstLevel) {
   var self = this;
