@@ -42,20 +42,26 @@ ModelBuilder.parseVariableDeclaration = function parseVariableDeclaration(ast) {
 
   console.assert(ast.type === 'VariableDeclaration');
   ast.declarations.forEach(function(dec) {
-    var entity = self.parseVariableDeclarator(dec);
-    // console.log(JSON.stringify(entity));
-    self.entities.push(entity);
+    // var entity = self.parseVariableDeclarator(dec);
+    // // console.log(JSON.stringify(entity));
+    // self.entities.push(entity);
+    self.parseVariableDeclarator(dec);
   });
-}
+};
 
 ModelBuilder.parseVariableDeclarator = function parseVariableDeclarator(ast) {
+  var self = this;
   console.assert(ast.type === 'VariableDeclarator');
-  var entity = new Entity(ast.id.name);
+
   if (ast.init) {
     if (ast.init.type === 'ObjectExpression') {
+      var entity = new Entity(ast.id.name);
       var fields = this.parseObjectExpression(ast.init);
       entity.fields = fields;
-      return entity;
+      self.entities.push(entity);
+    }
+    else if (ast.init.type === 'ArrayExpression') {
+      self.name = ast.id.name;
     }
     else {
       throw new Error('VariableDeclarator parsing: Unknown init type: ' + ast.init.type);

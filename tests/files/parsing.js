@@ -1,6 +1,16 @@
 var expect = chai.expect;
 var assert = chai.assert;
 
+var load = function(url) {
+  return new Promise(function(done){
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      success: done
+    })
+  });
+};
+
 describe('parsing tests', function(){
   it('should parse data2.json file correctly', function(done){
     $.ajax({
@@ -21,4 +31,15 @@ describe('parsing tests', function(){
       }
     })
   });
+
+  it('should parse sample3 correctly', function(done){
+    load('sample3.json')
+    .then(function(ast){
+      var expected = 'northWind';
+      var model = ModelBuilder.walk(ast);
+      expect(model.name).to.equal(expected);
+      console.log(model.name);
+      done();
+    });
+  })
 });
