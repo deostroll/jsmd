@@ -61,8 +61,6 @@ describe('parsing tests', function(){
       expect(model.name).to.equal(expected);
       // console.log(model.name);
       done();
-    }, function(){
-      chai.fail();
-    });
+    }, done);
   });
 });
