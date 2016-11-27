@@ -63,4 +63,13 @@ describe('parsing tests', function(){
       done();
     }, done);
   });
+
+  it('should parse sample4 correctly', function(done) {
+    load('sample4.json').then(function(ast){
+      var model = ModelBuilder.walk(ast);
+      // console.log(JSON.stringify(model, null, 2));
+      expect(model.entities.length).to.equal(2);
+      done();
+    }, done);
+  });
 });
