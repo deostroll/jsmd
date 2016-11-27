@@ -1,3 +1,4 @@
  - **ast.json** : a model with customer entity
  - **data2.json** : a model with customer entity with one field
  - **sample3.js** and **sample3.json** : same as the above, but with a different model name
+ - **sample4.js** and **sample4.json** : model with 2 entities
