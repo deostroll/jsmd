@@ -12,7 +12,7 @@ var load = function(url) {
 describe('parsing tests', function(){
   it('should parse data2.json file correctly', function(done){
 
-    load('data2.json').then(function(data){
+    load('data2.json').done(function(data){
       expect(data).to.not.be.undefined;
 
       var model = ModelBuilder.walk(data);
@@ -27,7 +27,7 @@ describe('parsing tests', function(){
       // console.log(JSON.stringify(model, null, 2));
       done();
 
-    }, done);
+    });
   });
 
   it('should parse sample3 correctly', function(done){

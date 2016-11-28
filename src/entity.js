@@ -24,7 +24,7 @@ var ModelBuilder = {
     model.name = 'model';
     if(ast.type === 'Program') {
       this.parseProgramBody(ast.body);
-      model.name = this.name;
+      model.name = this.name ? this.name: model.name;
       model.entities = this.entities;
       return model;
     }
