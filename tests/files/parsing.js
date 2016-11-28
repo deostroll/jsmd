@@ -78,8 +78,9 @@ describe('parsing tests', function(){
       var field = entity.fields[0];
       expect(field.name).to.equal('studentId');
       expect(field.type).to.equal('field');
-      expect(field.def).to.be.undefined;
+      expect(field.def).to.be.defined;
       expect(field.def.type).to.be.equal('reference');
+      console.log(stringify(model));
       done();
     });
   });

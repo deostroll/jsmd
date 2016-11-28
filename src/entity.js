@@ -20,7 +20,7 @@ var ModelBuilder = {
       var entities = this.entities;
       return entities.filter(function(e) { return e.name === name; })[0]
     };
-
+    this.name = null;
     model.name = 'model';
     if(ast.type === 'Program') {
       this.parseProgramBody(ast.body);
