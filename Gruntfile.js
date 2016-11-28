@@ -184,7 +184,7 @@ module.exports = function(grunt) {
       options: {
         port: 4584,
         base: ['tests/web', 'tests/data'],
-        keepalive: true
+        keepalive: false
       }
     }
   };
@@ -199,6 +199,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', ['concat:build', 'copy:build']);
-  grunt.registerTask('default', ['concat:dev', 'copy:dev', 'connect:dev', 'watch']);
+  grunt.registerTask('default', ['concat:dev', 'copy:dev', 'connect:dev', 'connect:testserve','watch']);
   grunt.registerTask('test', ['concat:test', 'copy:test', 'connect:test', 'mocha']);
 };

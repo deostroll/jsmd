@@ -10,7 +10,7 @@ Entity.prototype.add = function(fieldInfo) {
 var ModelBuilder = {
   walk: function(ast) {
     this.entities = [];
-    this.name = 'model'
+    this.name = 'model';
     if(ast.type === 'Program') {
       this.parseProgramBody(ast.body);
       return {
