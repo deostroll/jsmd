@@ -156,7 +156,9 @@ module.exports = function(grunt) {
     test : {
       options: {
         urls: ['http://localhost:4583/'],
-        log: true
+        log: true,
+        logErrors: true,
+        run: true
       }
     }
   };

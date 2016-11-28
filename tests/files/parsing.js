@@ -16,7 +16,7 @@ describe('parsing tests', function(){
       expect(data).to.not.be.undefined;
 
       var model = ModelBuilder.walk(data);
-      console.log(stringify(model));
+      // console.log(stringify(model));
       expect(model).to.not.be.undefined;
       expect(model.name).to.equal('model');
       expect(model.entities.length).to.equal(1);
@@ -39,7 +39,9 @@ describe('parsing tests', function(){
       expect(model.name).to.equal(expected);
       // console.log(model.name);
       done();
-    }, done);
+    }, function(e){
+      done(e);
+    });
   });
 
   it('should parse sample4 correctly', function(done) {
@@ -66,4 +68,19 @@ describe('parsing tests', function(){
       done();
     }, done);
   }).timeout(5000);
+
+  it('should detect the foreign key reference', function (done) {
+    load('sample6.json').done(function(ast){
+      expect(ast.type).to.equal('Program');
+      var model = ModelBuilder.walk(ast);
+      var entity = model.getEntity('personalInfo');
+      expect(entity.name).to.equal('personalInfo');
+      var field = entity.fields[0];
+      expect(field.name).to.equal('studentId');
+      expect(field.type).to.equal('field');
+      expect(field.def).to.be.undefined;
+      expect(field.def.type).to.be.equal('reference');
+      done();
+    });
+  });
 });

@@ -9,14 +9,24 @@ Entity.prototype.add = function(fieldInfo) {
 
 var ModelBuilder = {
   walk: function(ast) {
+    var model = {
+      name: null,
+      entities: null
+    };
+
     this.entities = [];
-    this.name = 'model';
+
+    model.getEntity = function(name) {
+      var entities = this.entities;
+      return entities.filter(function(e) { return e.name === name; })[0]
+    };
+
+    model.name = 'model';
     if(ast.type === 'Program') {
       this.parseProgramBody(ast.body);
-      return {
-        name: this.name,
-        entities: this.entities
-      }
+      model.name = this.name;
+      model.entities = this.entities;
+      return model;
     }
   }
 };
@@ -24,6 +34,8 @@ var ModelBuilder = {
 function _throw(msg) {
   throw new Error(msg);
 };
+
+function _stringify(obj) { return JSON.stringify(obj); }
 
 ModelBuilder.parseProgramBody = function parseProgramBody(statements) {
   var self = this;
@@ -129,13 +141,19 @@ ModelBuilder.parseDef = function parseDef(ast) {
     var def = self.parseObjectExpression(ast, false);
     return def;
   }
+  else if (ast.type === 'MemberExpression') {
+    var result = self.parseMemberExpression(ast);
+    return result;
+  }
   else {
+
     _throw('parseDef: Unknown type: ' + ast.type);
   }
 };
 
 ModelBuilder.parsePropertyValue = function parsePropertyValue(ast) {
   var self = this;
+  // debugger;
   if (ast.type === 'ObjectExpression') {
     return self.parseObjectExpression(ast, false);
   }
@@ -159,4 +177,24 @@ ModelBuilder.parseArrayExpression = function parseArrayExpression(ast) {
     }
   });
   return elements;
+};
+
+ModelBuilder.parseMemberExpression = function parseMemberExpression(ast) {
+  console.assert(ast.type === 'MemberExpression');
+  var result = {};
+  if (ast.object && ast.object.type === 'Identifier') {
+    result.entityName = ast.object.name;
+  }
+  else {
+    _throw('parseMemberExpression: Unknown object: ' + _stringify(ast.object));
+  }
+
+  if (ast.property && ast.property.type === 'Identifier') {
+    result.fieldName = ast.property.name;
+  }
+  else {
+    _throw('parseMemberExpression: Unknown property: ' + stringify(ast.property));
+  }
+  result.type = 'reference';
+  return result;
 };
