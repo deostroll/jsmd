@@ -56,8 +56,19 @@ ModelBuilder.parseVariableDeclarator = function parseVariableDeclarator(ast) {
   if (ast.init) {
     if (ast.init.type === 'ObjectExpression') {
       var entity = new Entity(ast.id.name);
-      var fields = this.parseObjectExpression(ast.init);
+      var fInfo = this.parseObjectExpression(ast.init);
+      var fields = [];
+      var $key = [];
+      fInfo.reduce(function(a, item){
+        if (item.type === 'field') {
+          fields.push(item);
+        }
+        else if (item.type === 'IdentityConstraint') {
+          $key = item.value;
+        }
+      });
       entity.fields = fields;
+      entity.$key = $key;
       self.entities.push(entity);
     }
     else if (ast.init.type === 'ArrayExpression') {
@@ -83,12 +94,18 @@ ModelBuilder.parseObjectExpression = function parseObjectExpression(ast, firstLe
   if (firstLevel) {
     var fields = [];
     ast.properties.forEach(function(prop){
-      if (prop.type === 'Property') {
+      if (prop.type === 'Property' && prop.key.type === 'Identifier') {
         fields.push({
           type: 'field',
           name: prop.key.name,
           def: self.parseDef(prop.value)
         })
+      }
+      else if(prop.type === 'Property' && prop.key.type === 'Literal' && prop.value.type === 'ArrayExpression') {
+        fields.push({
+          type: 'IdentityConstraint',
+          value: self.parseArrayExpression(prop.value)
+        });
       }
       else {
         _throw('ObjectExpression: Unknown property type: ' + prop.type);
@@ -128,4 +145,18 @@ ModelBuilder.parsePropertyValue = function parsePropertyValue(ast) {
   else {
     _throw('parsePropertyValue: Unknown type: ' + ast.type);
   }
-}
+};
+
+ModelBuilder.parseArrayExpression = function parseArrayExpression(ast) {
+  console.assert(ast.type === 'ArrayExpression');
+  var elements = [];
+  ast.elements.forEach(function(el){
+    if (el.type === 'Literal') {
+      elements.push(el.value)
+    }
+    else {
+      _throw('parseArrayExpression: Unknown type: ', el.type);
+    }
+  });
+  return elements;
+};
