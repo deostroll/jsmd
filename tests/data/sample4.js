@@ -1,27 +1,19 @@
 var country = {
 	cid: {
-		definition: {
-			type: 'int',
-		}
+		type: 'int',
 	},
 	name: {
-		definition: {
-			type: 'string',
-			size: 25
-		}
+		type: 'string',
+		size: 25
 	}
 };
 
 var units = {
 	id: {
-		definition: {
-			type: 'int',
-		}
+		type: 'int',
 	},
 	unitName: {
-		definition: {
-			type: 'string',
-			size: 25
-		}
+		type: 'string',
+		size: 25
 	}
 };
