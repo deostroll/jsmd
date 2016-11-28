@@ -27,7 +27,7 @@
                                             "type": "Property",
                                             "key": {
                                                 "type": "Identifier",
-                                                "name": "def"
+                                                "name": "definition"
                                             },
                                             "computed": false,
                                             "value": {

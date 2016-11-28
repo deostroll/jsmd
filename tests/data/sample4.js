@@ -1,6 +1,6 @@
 var country = {
 	cid: {
-		def: {
+		definition: {
 			type: 'int',
 		}
 	},
