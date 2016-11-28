@@ -52,14 +52,17 @@ describe('parsing tests', function(){
 
   it('should detect the primary key', function(done){
     load('sample5.json').then(function(ast) {
+      console.log(ast.type);
       var model = ModelBuilder.walk(ast);
+      // console.log(stringify(model));
       expect(model.entities.length).to.equal(1);
+
       var entity = model.entities[0];
-      console.log(stringify(entity));
+      // console.log(stringify(entity));
       expect(entity.name).to.equal('student');
       expect(entity.$key).to.be.not.undefined;
       expect(Array.isArray(entity.$key)).to.equal(true);
       done();
     }, done);
-  });
+  }).timeout(5000);
 });
