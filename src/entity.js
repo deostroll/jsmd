@@ -59,7 +59,7 @@ ModelBuilder.parseVariableDeclarator = function parseVariableDeclarator(ast) {
       var fInfo = this.parseObjectExpression(ast.init);
       var fields = [];
       var $key = [];
-      fInfo.reduce(function(a, item){
+      fInfo.forEach(function(item){
         if (item.type === 'field') {
           fields.push(item);
         }

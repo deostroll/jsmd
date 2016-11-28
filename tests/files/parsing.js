@@ -14,8 +14,9 @@ describe('parsing tests', function(){
 
     load('data2.json').then(function(data){
       expect(data).to.not.be.undefined;
-      // console.log(data.type);
+
       var model = ModelBuilder.walk(data);
+      console.log(stringify(model));
       expect(model).to.not.be.undefined;
       expect(model.name).to.equal('model');
       expect(model.entities.length).to.equal(1);
@@ -52,7 +53,7 @@ describe('parsing tests', function(){
 
   it('should detect the primary key', function(done){
     load('sample5.json').then(function(ast) {
-      console.log(ast.type);
+      // console.log(ast.type);
       var model = ModelBuilder.walk(ast);
       // console.log(stringify(model));
       expect(model.entities.length).to.equal(1);
