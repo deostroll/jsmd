@@ -12,25 +12,6 @@ var load = function(url) {
 };
 
 describe('parsing tests', function() {
-  it('should parse data2.json file correctly', function(done) {
-
-    load('data2.json').done(function(data) {
-      expect(data).to.not.be.undefined;
-
-      var model = ModelBuilder.walk(data);
-      // console.log(stringify(model));
-      expect(model).to.not.be.undefined;
-      expect(model.name).to.equal('model');
-      expect(model.entities.length).to.equal(1);
-      var entity = model.entities[0];
-      expect(entity.name).to.equal('customer');
-      expect(entity.fields.length).to.equal(1);
-      expect(entity.fields[0].name).to.equal('customerId');
-      // console.log(JSON.stringify(model, null, 2));
-      done();
-
-    });
-  });
 
   it('should parse sample3 correctly', function(done) {
     load('sample3.json')
