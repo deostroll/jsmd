@@ -15,29 +15,27 @@ describe('parsing tests', function() {
 
   it('should parse sample3 correctly', function(done) {
     load('sample3.json')
-      .then(function(ast) {
+      .done(function(ast) {
         // console.log(ast.type);
         var expected = 'northWind';
         var model = ModelBuilder.walk(ast);
         expect(model.name).to.equal(expected);
         // console.log(model.name);
         done();
-      }, function(e) {
-        done(e);
       });
   });
 
   it('should parse sample4 correctly', function(done) {
-    load('sample4.json').then(function(ast) {
+    load('sample4.json').done(function(ast) {
       var model = ModelBuilder.walk(ast);
       // console.log(JSON.stringify(model, null, 2));
       expect(model.entities.length).to.equal(2);
       done();
-    }, done);
+    });
   });
 
   it('should detect the primary key', function(done) {
-    load('sample5.json').then(function(ast) {
+    load('sample5.json').done(function(ast) {
       // console.log(ast.type);
       var model = ModelBuilder.walk(ast);
       // console.log(stringify(model));
@@ -49,8 +47,8 @@ describe('parsing tests', function() {
       expect(entity.$key).to.be.not.undefined;
       expect(Array.isArray(entity.$key)).to.equal(true);
       done();
-    }, done);
-  }).timeout(5000);
+    });
+  });
 
   it('should detect the foreign key reference', function(done) {
     load('sample6.json').done(function(ast) {
