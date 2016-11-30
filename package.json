@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "astify": "node scripts/makeAst.js"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-mocha": "^1.0.2",
     "load-grunt-tasks": "^3.5.2",
+    "minimist": "^1.2.0",
     "mocha": "^3.1.2"
   }
 }
