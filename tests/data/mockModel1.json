@@ -1,0 +1,54 @@
+{
+  "name" : "model",
+  "entities": [
+    {
+      "name": "Ent1",
+      "fields": [
+        {
+          "name": "id",
+          "type": "field",
+          "def":{
+            "type": "string",
+            "size": 25
+          }
+        },
+        {
+          "name" : "field2",
+          "type": "field",
+          "def":{
+            "type": "string",
+            "size": 25
+          }
+        }
+      ],
+      "$key" : ["id"]
+    },
+    {
+      "name": "Ent2",
+      "fields": [
+        {
+          "name": "field1",
+          "type": "field",
+          "def":{
+            "type": "string",
+            "size": 25
+          }
+        },
+        {
+          "name" : "field2",
+          "type": "field",
+          "def":{
+            "type": "string",
+            "size": 25
+          }
+        },
+        {
+          "name" : "field3",
+          "type": "reference",
+          "entityName" : "Ent1",
+          "fieldName" : "id"
+        }
+      ]
+    },
+  ]
+}
