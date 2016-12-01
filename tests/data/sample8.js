@@ -1,8 +1,8 @@
 var employees = {
   employeeId: {
-		type: 'int',
-		autoincrement: true
-	}
+    type: 'int',
+    autoincrement: true
+  }
 };
 
 employees.employeeName = {
@@ -21,17 +21,17 @@ employees.$key = ['employeeId'];
 
 var orders = {
   orderId: {
-		type: 'string',
-		size: 10
-	},
-  customerId: customer.customerId,
-  shipAddress : {
+    type: 'string',
+    size: 10
+  },
+  // customerId: customer.customerId,
+  shipAddress: {
     type: 'string',
     size: 25
   },
   billAddress: {
-		type: 'string',
-		size: 25
-	},
-	employeeId: employees.employeeId
+    type: 'string',
+    size: 25
+  },
+  employeeId: employees.employeeId
 };
