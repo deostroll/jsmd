@@ -114,4 +114,16 @@ describe('parsing tests', function() {
 
   });
 
+  it('should parse sample 8 correctly', function(done) {
+    load('sample8.json').done(function(ast) {
+      var model = ModelBuilder.walk(ast);
+      expect(model.entities.length).to.equal(2);
+      var entity = model.entities[0];
+      expect(entity).to.be.defined;
+      expect(entity.name).to.equal('employees');
+      expect(entity.fields.length).to.equal(4);
+      done();
+    });
+  });
+
 });
