@@ -13,7 +13,7 @@ var ModelBuilder = {
       name: null,
       entities: null
     };
-
+    this.cache = {};
     this.entities = [];
 
     model.getEntity = function(name) {
@@ -43,11 +43,14 @@ ModelBuilder.parseProgramBody = function parseProgramBody(statements) {
     if (a.type === 'VariableDeclaration') {
       self.parseVariableDeclaration(a);
     }
+    else if (a.type === 'ExpressionStatement') {
+      self.parseExpressionStatement(a);
+    }
     else {
       throw new Error('Unknown statement: ' + a.type);
     }
   });
-}
+};
 
 ModelBuilder.parseVariableDeclaration = function parseVariableDeclaration(ast) {
   var self = this;
@@ -81,6 +84,7 @@ ModelBuilder.parseVariableDeclarator = function parseVariableDeclarator(ast) {
       });
       entity.fields = fields;
       entity.$key = $key;
+      self.cache[entity.name] = entity;
       self.entities.push(entity);
     }
     else if (ast.init.type === 'ArrayExpression') {
@@ -198,3 +202,36 @@ ModelBuilder.parseMemberExpression = function parseMemberExpression(ast) {
   result.type = 'reference';
   return result;
 };
+
+ModelBuilder.parseExpressionStatement = function parseExpressionStatement(ast) {
+  var entity;
+  var self = this;
+
+  if (ast.expression.type === 'AssignmentExpression' && ast.expression.operator === '=') {
+    if (ast.expression.left.type === 'MemberExpression' && ast.expression.left.object.type === 'Identifier') {
+      var entityName = ast.expression.left.object.name;
+      entity = self.cache[entityName];
+      if (!entity) {
+        _throw('parseExpressionStatement: Cannot find entity: ' + entityName)
+      }
+    }
+    else {
+      _throw('parseExpressionStatement: Cannot parse left expression statement.');
+    }
+    if (ast.expression.left.property.name === '$key') {
+      entity.$key = self.parseArrayExpression(ast.expression.right);
+    }
+    else {
+      var field = {
+        type: 'field',
+        name: ast.expression.left.property.name
+      };
+      if (ast.expression.right.type === 'ObjectExpression') {
+        var def = self.parseObjectExpression(ast.expression.right, false);
+        field.def = def;
+      }
+      entity.fields.push(field);
+    }
+
+  }
+}
