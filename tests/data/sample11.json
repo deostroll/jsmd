@@ -1,0 +1,530 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Books"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "BookId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "int",
+                        "raw": "'int'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "ISBN"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "PublisherID"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "int",
+                        "raw": "'int'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 15,
+                        "raw": "15"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Title"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 50,
+                        "raw": "50"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "BookId",
+                      "raw": "'BookId'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Authors"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "AuthorId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "int",
+                        "raw": "'int'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "BookId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "Books"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "BookId"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "AuthorName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 30,
+                        "raw": "30"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "AuthorId",
+                      "raw": "'AuthorId'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Publishers"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "PublisherId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "int",
+                        "raw": "'int'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "PublisherName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 30,
+                        "raw": "30"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "PublisherId",
+                      "raw": "'PublisherId'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    }
+  ],
+  "sourceType": "script"
+}

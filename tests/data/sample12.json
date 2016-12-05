@@ -1,0 +1,607 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Person"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "PersonalId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "Number",
+                        "raw": "'Number'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 8,
+                        "raw": "8"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "firstName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 15,
+                        "raw": "15"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "lastName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 15,
+                        "raw": "15"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "email"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 30,
+                        "raw": "30"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "PersonalId",
+                      "raw": "'PersonalId'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Phone"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "PhoneId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "Number",
+                        "raw": "'Number'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 8,
+                        "raw": "8"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "PersonalId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "Person"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "PersonalId"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Mobile"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "Number",
+                        "raw": "'Number'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Office"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "Number",
+                        "raw": "'Number'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "Relationship"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "RelationId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "Number",
+                        "raw": "'Number'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 8,
+                        "raw": "8"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "PersonalId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "Person"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "PersonalId"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Name"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "String",
+                        "raw": "'String'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 30,
+                        "raw": "30"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Relation"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "String",
+                        "raw": "'String'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 15,
+                        "raw": "15"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    }
+  ],
+  "sourceType": "script"
+}

@@ -1,0 +1,1107 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "employees"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "emp_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "int",
+                        "raw": "'int'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 11,
+                        "raw": "11"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "birth_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "first_name"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 14,
+                        "raw": "14"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "last_name"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 16,
+                        "raw": "16"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "gender"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "char",
+                        "raw": "'char'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 1,
+                        "raw": "1"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "hire_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "emp_no",
+                      "raw": "'emp_no'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "salaries"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "emp_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "employees"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "emp_no"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "from_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "salary"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "int",
+                        "raw": "'int'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 11,
+                        "raw": "11"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "to_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "emp_no",
+                      "raw": "'emp_no'"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "from_date",
+                      "raw": "'from_date'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "departments"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "dept_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "char",
+                        "raw": "'char'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 4,
+                        "raw": "4"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "dept_name"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 40,
+                        "raw": "40"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "dept_name",
+                      "raw": "'dept_name'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "dept_emp"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "emp_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "employees"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "emp_no"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "dept_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "departments"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "dept_no"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "from_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "to_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "emp_no",
+                      "raw": "'emp_no'"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "dept_no",
+                      "raw": "'dept_no'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "dept_manager"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "emp_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "employees"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "emp_no"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "dept_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "departments"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "dept_no"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "from_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "to_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "emp_no",
+                      "raw": "'emp_no'"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "dept_no",
+                      "raw": "'dept_no'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "titles"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "emp_no"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "employees"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "emp_no"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "from_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "to_date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "date",
+                        "raw": "'date'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "title"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 50,
+                        "raw": "50"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "emp_no",
+                      "raw": "'emp_no'"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "title",
+                      "raw": "'title'"
+                    },
+                    {
+                      "type": "Literal",
+                      "value": "from_date",
+                      "raw": "'from_date'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    }
+  ],
+  "sourceType": "script"
+}
