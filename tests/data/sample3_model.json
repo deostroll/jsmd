@@ -1,0 +1,19 @@
+{
+  "name": "northWind",
+  "entities": [
+    {
+      "name": "customer",
+      "fields": [
+        {
+          "type": "field",
+          "name": "customerId",
+          "def": {
+            "type": "string",
+            "size": 10
+          }
+        }
+      ],
+      "$key": []
+    }
+  ]
+}

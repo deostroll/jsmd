@@ -1,0 +1,112 @@
+{
+  "name": "northWind",
+  "entities": [
+    {
+      "name": "customer",
+      "fields": [
+        {
+          "type": "field",
+          "name": "customerId",
+          "def": {
+            "type": "string",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "contactName",
+          "def": {
+            "type": "string",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "contactDesig",
+          "def": {
+            "type": "string",
+            "size": 10
+          }
+        }
+      ],
+      "$key": [
+        "customerId"
+      ]
+    },
+    {
+      "name": "employees",
+      "fields": [
+        {
+          "type": "field",
+          "name": "employeeId",
+          "def": {
+            "type": "int",
+            "autoincrement": true
+          }
+        },
+        {
+          "type": "field",
+          "name": "employeeName",
+          "def": {
+            "type": "string",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "division",
+          "def": {
+            "type": "string",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "reportsTo"
+        }
+      ],
+      "$key": [
+        "employeeId"
+      ]
+    },
+    {
+      "name": "orders",
+      "fields": [
+        {
+          "type": "field",
+          "name": "orderId",
+          "def": {
+            "type": "string",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "customerId",
+          "def": {
+            "entityName": "customer",
+            "fieldName": "customerId",
+            "type": "reference"
+          }
+        },
+        {
+          "type": "field",
+          "name": "shipAddress",
+          "def": {
+            "type": "string",
+            "size": 25
+          }
+        },
+        {
+          "type": "field",
+          "name": "billAddress",
+          "def": {
+            "type": "string",
+            "size": 25
+          }
+        }
+      ],
+      "$key": []
+    }
+  ]
+}

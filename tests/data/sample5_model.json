@@ -1,0 +1,37 @@
+{
+  "name": "model",
+  "entities": [
+    {
+      "name": "student",
+      "fields": [
+        {
+          "type": "field",
+          "name": "studentId",
+          "def": {
+            "type": "string",
+            "size": 5
+          }
+        },
+        {
+          "type": "field",
+          "name": "firstName",
+          "def": {
+            "type": "string",
+            "size": 15
+          }
+        },
+        {
+          "type": "field",
+          "name": "lastName",
+          "def": {
+            "type": "string",
+            "size": 15
+          }
+        }
+      ],
+      "$key": [
+        "studentId"
+      ]
+    }
+  ]
+}

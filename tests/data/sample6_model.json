@@ -1,0 +1,84 @@
+{
+  "name": "model",
+  "entities": [
+    {
+      "name": "student",
+      "fields": [
+        {
+          "type": "field",
+          "name": "studentId",
+          "def": {
+            "type": "string",
+            "size": 5
+          }
+        },
+        {
+          "type": "field",
+          "name": "firstName",
+          "def": {
+            "type": "string",
+            "size": 15
+          }
+        },
+        {
+          "type": "field",
+          "name": "lastName",
+          "def": {
+            "type": "string",
+            "size": 15
+          }
+        }
+      ],
+      "$key": [
+        "studentId"
+      ]
+    },
+    {
+      "name": "personalInfo",
+      "fields": [
+        {
+          "type": "field",
+          "name": "studentId",
+          "def": {
+            "entityName": "student",
+            "fieldName": "studentId",
+            "type": "reference"
+          }
+        },
+        {
+          "type": "field",
+          "name": "fatherName",
+          "def": {
+            "type": "string",
+            "size": 25
+          }
+        },
+        {
+          "type": "field",
+          "name": "motherName",
+          "def": {
+            "type": "string",
+            "size": 25
+          }
+        },
+        {
+          "type": "field",
+          "name": "address",
+          "def": {
+            "type": "string",
+            "size": 50
+          }
+        },
+        {
+          "type": "field",
+          "name": "pincode",
+          "def": {
+            "type": "string",
+            "size": 7
+          }
+        }
+      ],
+      "$key": []
+    }
+  ]
+}

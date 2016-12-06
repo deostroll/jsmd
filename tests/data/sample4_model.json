@@ -1,0 +1,47 @@
+{
+  "name": "model",
+  "entities": [
+    {
+      "name": "country",
+      "fields": [
+        {
+          "type": "field",
+          "name": "cid",
+          "def": {
+            "type": "int"
+          }
+        },
+        {
+          "type": "field",
+          "name": "name",
+          "def": {
+            "type": "string",
+            "size": 25
+          }
+        }
+      ],
+      "$key": []
+    },
+    {
+      "name": "units",
+      "fields": [
+        {
+          "type": "field",
+          "name": "id",
+          "def": {
+            "type": "int"
+          }
+        },
+        {
+          "type": "field",
+          "name": "unitName",
+          "def": {
+            "type": "string",
+            "size": 25
+          }
+        }
+      ],
+      "$key": []
+    }
+  ]
+}
