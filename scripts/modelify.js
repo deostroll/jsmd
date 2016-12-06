@@ -13,11 +13,12 @@ fs.readFile(args.f, {encoding: 'utf8'}, function(err, contents){
   }
   else {
     var basename = path.basename(args.f, '.json');
+    var dir = path.dirname(args.f);
     var ast = JSON.parse(contents);
     var model = ModelBuilder.walk(ast);
     var json = JSON.stringify(model, null, 2);
-    var dir = path.dirname(args.o);
     var target = path.join(dir, basename + "_model.json" );
+    
     fs.writeFile(target, json, function(err){
       if (err) {
         console.error(err);
