@@ -1,11 +1,12 @@
 {
   "name": "model-designer",
   "version": "1.0.0",
-  "description": "",
+  "description": "A model designer api in javascript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "astify": "node scripts/makeAst.js"
+    "astify": "node scripts/makeAst.js",
+    "modelify": "node scripts/modelify.js"
   },
   "keywords": [],
   "author": "",
