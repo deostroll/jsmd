@@ -126,4 +126,12 @@ describe('parsing tests', function() {
     });
   });
 
+  it('should parse sample 7 correctly', function(done){
+    load('sample7.json').done(function(ast){
+      var model = ModelBuilder.walk(ast);
+      expect(model.entities.length).to.equal(3);
+      done();
+    });
+  });
+
 });
