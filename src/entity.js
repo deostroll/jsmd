@@ -112,18 +112,25 @@
     if (firstLevel) {
       var fields = [];
       ast.properties.forEach(function(prop){
-        if (prop.type === 'Property' && prop.key.type === 'Identifier') {
+
+        if(prop.type === 'Property' && prop.key.name === '$key' && prop.key.type === 'Identifier' && prop.value.type === 'ArrayExpression') {
+          fields.push({
+            type: 'IdentityConstraint',
+            value: self.parseArrayExpression(prop.value)
+          });
+        }
+        else if(prop.type === 'Property' && prop.key.type === 'Literal' && prop.key.value === '$key' && prop.value.type === 'ArrayExpression') {
+          fields.push({
+            type: 'IdentityConstraint',
+            value: self.parseArrayExpression(prop.value)
+          });
+        }
+        else if (prop.type === 'Property') {
           fields.push({
             type: 'field',
             name: prop.key.name,
             def: self.parseDef(prop.value)
           })
-        }
-        else if(prop.type === 'Property' && prop.key.type === 'Literal' && prop.value.type === 'ArrayExpression') {
-          fields.push({
-            type: 'IdentityConstraint',
-            value: self.parseArrayExpression(prop.value)
-          });
         }
         else {
           _throw('ObjectExpression: Unknown property type: ' + prop.type);
