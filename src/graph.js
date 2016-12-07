@@ -1,7 +1,15 @@
+(function(window){
+  if (typeof module === 'object' && module && typeof module.exports) {
+    module.exports = {
+      Graph: Graph
+    }
+  }
+})(this);
+
 function Graph(input) {
   var cache = input.reduce(function(obj, item, idx){
     obj.indices[item.name] = idx;
-    obj.nodes.push(new Node(item.name));
+    obj.nodes.push(new Node(item));
     return obj;
   }, {
     indices: {},
@@ -48,5 +56,5 @@ function Node(value) {
 
   this.edgeTo = function(node) {
     self.out.push(node);
-  }
+  };
 }
