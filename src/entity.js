@@ -113,7 +113,7 @@
       var fields = [];
       ast.properties.forEach(function(prop){
 
-        if(prop.type === 'Property' && prop.key.name === '$key' && prop.key.type === 'Identifier' && prop.value.type === 'ArrayExpression') {
+        if(prop.type === 'Property' && prop.key.type === 'Identifier' && prop.key.name === '$key' && prop.value.type === 'ArrayExpression') {
           fields.push({
             type: 'IdentityConstraint',
             value: self.parseArrayExpression(prop.value)
@@ -130,7 +130,14 @@
             type: 'field',
             name: prop.key.name,
             def: self.parseDef(prop.value)
-          })
+          });
+        }
+        else if (prop.type === 'Property' && prop.key.type === 'Literal') {
+          fields.push({
+            type: 'field',
+            name: prop.key.value,
+            def: self.parseDef(prop.value)
+          });
         }
         else {
           _throw('ObjectExpression: Unknown property type: ' + prop.type);

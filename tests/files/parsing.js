@@ -134,4 +134,17 @@ describe('parsing tests', function() {
     });
   });
 
+  it('should parse sample 13 correctly', function(done){
+    load('sample13.json').done(function(ast){
+      var model = ModelBuilder.walk(ast);
+      expect(model.entities.length).to.equal(1);
+
+      var entity = model.entities[0];
+      // console.log(stringify(entity));
+      expect(entity.name).to.equal('student');
+      expect(entity.$key).to.be.not.undefined;
+      expect(Array.isArray(entity.$key)).to.equal(true);
+      done();
+    });
+  });
 });

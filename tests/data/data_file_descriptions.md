@@ -7,6 +7,7 @@
 - **mockModel1.json** : for testing the graph
 - **sample7.js** and **sample7.json** : model with customer, orders, employees: self referential key
 - **sample8.js** and **sample8.json** : model with employees and orders
-- sample10.js : 
+- sample10.js :
 - sample11.js :
 - sample12.js :
+- sample13.js : sample as sample5; two fields represented as literal
