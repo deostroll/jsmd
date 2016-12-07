@@ -27,6 +27,34 @@
       // cache.nodes[edg[0]].out.push(edg[1]);
       cache.nodes[edg[0]].edgeTo(cache.nodes[edg[1]]);
     });
+
+
+    // do a topological sort...
+    this.sort = function() {
+      var sorted = [];
+
+      var visit = function(node) {
+        if (node.marked) {
+          throw new Error('Not a DAG');
+        }
+
+        if (!node.visited) {
+          node.marked = true;
+          node.out.forEach(visit);
+          node.visited = true;
+          node.marked = false;
+          sorted.unshift(node);
+        }
+      };
+
+      cache.nodes.forEach(function(node){
+        if (!node.visited) {
+          console.assert(node.marked);
+          visit(node);
+        }
+      });
+    };
+
   }
 
   function Node(value) {
