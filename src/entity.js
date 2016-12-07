@@ -125,7 +125,7 @@
             value: self.parseArrayExpression(prop.value)
           });
         }
-        else if (prop.type === 'Property') {
+        else if (prop.type === 'Property' && prop.key.type === 'Identifier') {
           fields.push({
             type: 'field',
             name: prop.key.name,
