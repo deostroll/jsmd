@@ -50,19 +50,27 @@ function ViewModel() {
       var builder = new Builder();
       var model = builder.walk(ast);
       var draw = new CanvasHelper();
-      var group = draw.generateFromEntity(model.entities[0]);
-      group.setPosition({
-        x: 10, y: 10
+      // var group = draw.generateFromEntity(model.entities[0]);
+      var entities = draw.generateFromModel(model);
+      var initial = {
+        x: 10, y : 10
+      };
+
+      entities.forEach( (e, idx) => {
+        if (idx === 0) {
+          e.setPosition(initial)
+        }
+        else {
+
+          var prev = entities[idx - 1];
+          var r = prev.getClientRect();
+          e.setPosition({
+            x: r.x + r.width + 10,
+            y: initial.y
+          });
+        }
+        layer.add(e);
       });
-      layer.add(group);
-      var texts =Array.from(group.getChildren(t => t.className === 'Text'));
-      _log('foo');
-      texts.forEach(t => {
-        _log({
-          text: t.text(),
-          rect: t.getClientRect()
-        })
-      })
       layer.draw();
     });
 

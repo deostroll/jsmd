@@ -9,14 +9,18 @@
   CanvasHelper.prototype = {
     generateFromModel: function(model) {
       var entities = model.entities.map(this.generateFromEntity.bind(this));
+      return entities;
     },
+
     generateFromEntity: function(entity) {
+
       var group = new Konva.Group();
 
       var headerText = new Konva.Text({
         text: entity.name,
         fill: 'black',
-        fontSize: '12'
+        fontSize: '12',
+        fontStyle: 'bold'
       });
 
       var texts = entity.fields.map(function(f){
@@ -30,11 +34,7 @@
       texts.unshift(headerText);
 
       var res = texts.reduce(function(w, item, idx) {
-        // var r = item.getClientRect();
-        // console.log({
-        //   text: item.text(),
-        //   rect: r
-        // });
+
         var width = item.getWidth();
         if (width > w.w) {
           w.w = width;
@@ -46,18 +46,8 @@
         h: 0
       });
 
-      // console.log(res);
-      var rect = new Konva.Rect({
-        width: res.w,
-        height: res.h,
-        x: 0,
-        y: 0,
-        stroke: 'black',
-        visible: false
-      });
-
-      group.add(rect);
       group.add.apply(group,texts);
+
       texts.forEach(function(t, idx){
         var item = t;
         var r = item.getClientRect();
@@ -66,21 +56,41 @@
         }
         else {
           var txtPrev = texts[idx - 1];
+          var offset = ((idx - 1) === 0) ? 5 : 2;
           t.setPosition({
             x: 0,
-            y: txtPrev.y() + txtPrev.getHeight() + 2
+            y: txtPrev.y() + txtPrev.getHeight() + offset
           });
         }
       });
-      // headerText.setOffset({
-      //   x: headerText.getWidth() / 2,
-      //   y: headerText.getHeight() / 2
-      // });
-      //
-      // headerText.setX(headerRect.getWidth()/2);
-      // headerText.setY(headerRect.getHeight()/2);
 
-      return group;
+      var container = new Konva.Group();
+      var grpRect = group.getClientRect();
+      var rect = new Konva.Rect({
+        height: grpRect.height + 10,
+        width: grpRect.width + 15,
+        stroke: 'black',
+        strokeWidth: 1,
+        x: 0,y: 0
+      });
+      var line = new Konva.Line({
+        x: 0,
+        y: headerText.y() + headerText.getHeight() + 7,
+        points: [
+          0,0,
+          rect.getWidth(), 0
+        ],
+        stroke: 'black',
+        strokeWidth: 1
+      });
+      container.add(line);
+      container.add(rect);
+      container.add(group);
+      group.setPosition({
+        x: 5, y: 5
+      });
+
+      return container;
     }
   }
 
