@@ -2,6 +2,7 @@
 // Website: https://www.facebook.com/kolisetty.guru
 // Source: https://dev.mysql.com/doc/employee/en/sakila-structure.html
 // Employee Schema
+// File: sample10.js
 var employees = {
   emp_no: {
     type: 'int',
