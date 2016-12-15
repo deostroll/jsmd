@@ -1,19 +1,18 @@
-(function(window){
-  var _log = function(obj) {
-    console.log(JSON.stringify(obj, null, 2));
-  }
+(function(window) {
+
   function CanvasHelper() {
 
   }
 
   CanvasHelper.prototype = {
     generateFromModel: function(model) {
+      this._model = model;
       var entities = model.entities.map(this.generateFromEntity.bind(this));
       return entities;
     },
 
     generateFromEntity: function(entity) {
-
+      var model = this._model;
       var group = new Konva.Group();
 
       var headerText = new Konva.Text({
@@ -23,9 +22,10 @@
         fontStyle: 'bold'
       });
 
-      var texts = entity.fields.map(function(f){
+      var texts = entity.fields.map(function(f) {
         var text = new Konva.Text({
-          text: f.name,
+          text: f.name + (entity.$key.indexOf(f.name) > -1 ? '*' :
+            ''),
           fontSize: 10
         });
         return text;
@@ -42,19 +42,21 @@
         w.h += item.getHeight();
         return w;
       }, {
-        w : 0,
+        w: 0,
         h: 0
       });
 
-      group.add.apply(group,texts);
+      group.add.apply(group, texts);
 
-      texts.forEach(function(t, idx){
+      texts.forEach(function(t, idx) {
         var item = t;
         var r = item.getClientRect();
         if (idx === 0) {
-          t.setPosition({x: 0, y: 0})
-        }
-        else {
+          t.setPosition({
+            x: 0,
+            y: 0
+          })
+        } else {
           var txtPrev = texts[idx - 1];
           var offset = ((idx - 1) === 0) ? 5 : 2;
           t.setPosition({
@@ -71,13 +73,14 @@
         width: grpRect.width + 15,
         stroke: 'black',
         strokeWidth: 1,
-        x: 0,y: 0
+        x: 0,
+        y: 0
       });
       var line = new Konva.Line({
         x: 0,
         y: headerText.y() + headerText.getHeight() + 7,
         points: [
-          0,0,
+          0, 0,
           rect.getWidth(), 0
         ],
         stroke: 'black',
@@ -87,17 +90,18 @@
       container.add(rect);
       container.add(group);
       group.setPosition({
-        x: 5, y: 5
+        x: 5,
+        y: 5
       });
 
       return container;
     }
   }
 
-  if (typeof module === 'object' && module && typeof module.exports === 'object') {
+  if (typeof module === 'object' && module && typeof module.exports ===
+    'object') {
     module.exports.CanvasHelper = CanvasHelper;
-  }
-  else {
+  } else {
     window.CanvasHelper = CanvasHelper;
   }
 })(this);
