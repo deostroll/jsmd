@@ -45,6 +45,7 @@ function ViewModel() {
     $codeEditor.height($window.height() - $codeEditor.offset().top);
 
     self.code.subscribe(function(source){
+      layer.removeChildren();
       var ast = getProgramAst(source);
       // console.log(JSON.stringify(ast, null, 2));
       var builder = new Builder();
