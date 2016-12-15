@@ -9,6 +9,10 @@
     this.fields.push(fieldInfo);
   };
 
+  function Builder() {
+
+  }
+
   var ModelBuilder = {
     walk: function(ast) {
       var model = {
@@ -33,10 +37,23 @@
     }
   };
 
+  Builder.prototype = ModelBuilder;
   function _throw(msg) {
     throw new Error(msg);
   };
 
+  Builder.createFromJson = function(json) {
+
+    var model = {
+      name: json.name,
+      entities: json.entities
+    };
+    model.getEntity = function(name) {
+      var entities = this.entities;
+      return entities.filter(function(e) { return e.name === name; })[0]
+    };
+    return model;
+  }
   function _stringify(obj) { return JSON.stringify(obj); }
 
   ModelBuilder.parseProgramBody = function parseProgramBody(statements) {
@@ -253,10 +270,12 @@
   };
   if (typeof module === 'object' && module && typeof module.exports === 'object') {
     module.exports = {
-      ModelBuilder: ModelBuilder
+      ModelBuilder: ModelBuilder,
+      Builder: Builder
     };
   }
   else {
     window.ModelBuilder = ModelBuilder;
+    window.Builder = Builder;
   }
 })(this);

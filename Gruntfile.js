@@ -66,7 +66,8 @@ module.exports = function(grunt) {
         'tests/web/vendor.js' : [
           'node_modules/mocha/mocha.js',
           'node_modules/chai/chai.js',
-          'node_modules/jquery/dist/jquery.js'
+          'node_modules/jquery/dist/jquery.js',
+          'node_modules/konva/konva.js'
         ],
         'tests/web/main.js' : [
           'src/*.js',
@@ -168,7 +169,7 @@ module.exports = function(grunt) {
       options: {
         livereload: true,
         port: 4582,
-        base: 'web',
+        base: ['web', 'tests/data'],
         hostname: 'localhost',
         middleware: function(connect, options, middlewares) {
           middlewares.unshift(enableREST);

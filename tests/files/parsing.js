@@ -50,7 +50,7 @@ describe('parsing tests', function() {
     });
   });
 
-  it('should detect the foreign key reference', function(done) {
+  it('should detect the foreign key reference (sample6)', function(done) {
     load('sample6.json').done(function(ast) {
       expect(ast.type).to.equal('Program');
       var model = ModelBuilder.walk(ast);
