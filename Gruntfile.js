@@ -3,22 +3,22 @@ var fs = require('fs');
 // var bodyParser = require('body-parser');
 var qs = require('qs');
 
-var enableREST = function(req, res, next){
-  if (req.method === 'POST') {
-    var body = '';
-    req.on('data', d => body += d );
-    req.on('end', () => {
-      // fs.writeFile('ast.json', JSON.stringify(qs.parse(body), null, 2), () => res.end());
-      var obj = qs.parse(body);
-      var car = JSON.parse(obj.ast);
-      var json = JSON.stringify(car, null, 2);
-      fs.writeFile('ast.json', json, () => res.end());
-    });
-  }
-  else {
-    next();
-  }
-};
+// var enableREST = function(req, res, next){
+//   if (req.method === 'POST') {
+//     var body = '';
+//     req.on('data', d => body += d );
+//     req.on('end', () => {
+//       // fs.writeFile('ast.json', JSON.stringify(qs.parse(body), null, 2), () => res.end());
+//       var obj = qs.parse(body);
+//       var car = JSON.parse(obj.ast);
+//       var json = JSON.stringify(car, null, 2);
+//       fs.writeFile('ast.json', json, () => res.end());
+//     });
+//   }
+//   else {
+//     next();
+//   }
+// };
 
 module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
@@ -171,10 +171,10 @@ module.exports = function(grunt) {
         port: 4582,
         base: ['web', 'tests/data'],
         hostname: 'localhost',
-        middleware: function(connect, options, middlewares) {
-          middlewares.unshift(enableREST);
-          return middlewares;
-        }
+        // middleware: function(connect, options, middlewares) {
+        //   middlewares.unshift(enableREST);
+        //   return middlewares;
+        // }
       }
     },
     test: {
