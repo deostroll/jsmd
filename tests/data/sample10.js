@@ -55,7 +55,7 @@ var departments = {
     type: 'string',
     size: 40
   },
-  $key: ['dept_name']
+  $key: ['dept_no']
 };
 
 var dept_emp = {
