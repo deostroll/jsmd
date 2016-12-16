@@ -67,7 +67,8 @@ module.exports = function(grunt) {
           'node_modules/mocha/mocha.js',
           'node_modules/chai/chai.js',
           'node_modules/jquery/dist/jquery.js',
-          'node_modules/konva/konva.js'
+          'node_modules/konva/konva.js',
+          'node_modules/esprima/dist/esprima.js'
         ],
         'tests/web/main.js' : [
           'src/*.js',
