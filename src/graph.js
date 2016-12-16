@@ -14,20 +14,20 @@
 
     input.forEach(function(ent, index) {
       ent.fields.reduce(function(edgarr, field){
-        if (field.type === 'reference') {
-          var entityName = field.entityName;
+        if (field.def.type === 'reference') {
+          var entityName = field.def.entityName;
           var targetIndex = cache.indices[entityName];
           edgarr.push([index, targetIndex]);
         }
-        return edgearr;
+        return edgarr;
       }, edges);
     });
-
+    console.log('edges:', edges);
     edges.forEach(function(edg){
       // cache.nodes[edg[0]].out.push(edg[1]);
       cache.nodes[edg[0]].edgeTo(cache.nodes[edg[1]]);
     });
-
+    this.cache = cache;
 
     // do a topological sort...
     this.sort = function() {
@@ -49,10 +49,12 @@
 
       cache.nodes.forEach(function(node){
         if (!node.visited) {
-          console.assert(node.marked);
+          // console.assert(node.marked);
           visit(node);
         }
       });
+
+      return sorted;
     };
 
   }
@@ -79,6 +81,10 @@
 
     this.edgeTo = function(node) {
       self.out.push(node);
+    };
+
+    this.toString = function() {
+      return this.value.name;
     };
   }
 
