@@ -29,13 +29,14 @@ module.exports = function(grunt) {
         'web/vendor.js' : [
           'node_modules/esprima/dist/esprima.js',
           'node_modules/knockout/build/output/knockout-latest.js',
-          'node_modules/konva/konva.js',
+          'node_modules/vis/dist/vis.js',
           'node_modules/jquery/dist/jquery.js',
           'node_modules/bootstrap/dist/js/bootstrap.js'
         ],
         'web/vendor.css' : [
           'node_modules/bootstrap/dist/css/bootstrap.css',
-          'node_modules/bootstrap/dist/css/bootstrap-theme.css'
+          'node_modules/bootstrap/dist/css/bootstrap-theme.css',
+          'node_modules/vis/dist/vis.css',
         ],
         'web/main.js' : [
           'src/*.js',

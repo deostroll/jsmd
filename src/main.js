@@ -9,70 +9,69 @@ function ViewModel() {
   window.addEventListener('load', function() {
     $.ajax({
       url: 'sample10.js'
-    }).then(function(resp) {
+    }).done(function(resp) {
       self.code(resp);
     });
 
-    var $canvas = $('#myCanvas');
-    var width = $canvas.parent().width();
-    var $window = $(window);
-    var height = $window.height() - $canvas.offset().top;
-    var stage = new Konva.Stage({
-      width: width,
-      height: height,
-      container: $canvas.get(0)
-    });
+    var options = {
+      edges: {
+        arrows: 'to'
+      }
+    };
 
+    var $canvas = $('#myCanvas');
+    var $window = $(window);
     $codeEditor = $('#codeEditor');
 
     $fileInput = $('#fileInput').on('change', function(e) {
       self.loadFile(e.target.files[0]);
     });
 
-    var rect = new Konva.Rect({
-      height: height,
-      width: width,
-      stroke: 'black'
-    });
-
-    var borderLayer = new Konva.Layer();
-    borderLayer.add(rect);
-    var layer = new Konva.Layer();
-
-    stage.add(borderLayer);
-    stage.add(layer);
-
     $codeEditor.height($window.height() - $codeEditor.offset().top);
+    $canvas.width($window.width() - $canvas.offset().left);
+    $canvas.height($window.height() - $canvas.offset().top);
 
+    var network = new vis.Network(document.getElementById('myCanvas'));
+    network.setOptions(options);
     self.code.subscribe(function(source) {
-      layer.removeChildren();
-      var ast = getProgramAst(source);
-      // console.log(JSON.stringify(ast, null, 2));
-      var builder = new Builder();
-      var model = builder.walk(ast);
-      var draw = new CanvasHelper();
-      // var group = draw.generateFromEntity(model.entities[0]);
-      var entities = draw.generateFromModel(model);
-      var initial = {
-        x: 10,
-        y: 10
+      var bldr = new Builder();
+      var ast = esprima.parse(source);
+      var model = bldr.walk(ast);
+      var cache = {};
+      var nodes = model.entities.map((ent, idx) => {
+        cache[ent.name] = idx;
+        return {
+          id: idx,
+          label: ent.name
+        }
+      });
+      var edges = model.entities.reduce(function(edges, ent, idx){
+        ent.fields.forEach(f => {
+          if (f.def.type === 'reference') {
+            var name = f.def.entityName;
+            var tidx = cache[name];
+            edges.push({
+              from: idx, to: tidx
+            });
+          }
+        });
+        return edges;
+        // if (ent.def.type === 'reference') {
+        //   var name = ent.def.entityName;
+        //   var tidx = cache[name];
+        //   edges.push({
+        //     from: idx, to: tidx
+        //   })
+        // }
+      }, []);
+
+      var data = {
+        nodes: new vis.DataSet(nodes),
+        edges: new vis.DataSet(edges)
       };
 
-      entities.forEach((e, idx) => {
-        if (idx === 0) {
-          e.setPosition(initial)
-        } else {
+      network.setData(data);
 
-          var prev = entities[idx - 1];
-          var r = prev.getClientRect();
-          e.setPosition({
-            x: r.x + r.width + 10,
-            y: initial.y
-          });
-        }
-        layer.add(e);
-      });
-      layer.draw();
     });
 
   }, false);
