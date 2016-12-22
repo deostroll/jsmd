@@ -1,0 +1,219 @@
+{
+  "name": "model",
+  "entities": [
+    {
+      "name": "MARKS",
+      "fields": [
+        {
+          "type": "field",
+          "name": "MarkId",
+          "def": {
+            "type": "long",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "Student_Id",
+          "def": {
+            "entityName": "STUDENTS",
+            "fieldName": "Student_Id",
+            "type": "reference"
+          }
+        },
+        {
+          "type": "field",
+          "name": "Subject_Id",
+          "def": {
+            "entityName": "SUBJECTS",
+            "fieldName": "Subject_Id",
+            "type": "reference"
+          }
+        },
+        {
+          "type": "field",
+          "name": "Date",
+          "def": {
+            "type": "TimeStamp",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "Mark",
+          "def": {
+            "type": "number",
+            "size": 5
+          }
+        }
+      ],
+      "$key": [
+        "MarkId"
+      ]
+    },
+    {
+      "name": "STUDENTS",
+      "fields": [
+        {
+          "type": "field",
+          "name": "Student_Id",
+          "def": {
+            "type": "long",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "FirstName",
+          "def": {
+            "type": "string",
+            "size": 20
+          }
+        },
+        {
+          "type": "field",
+          "name": "LastName",
+          "def": {
+            "type": "string",
+            "size": 20
+          }
+        },
+        {
+          "type": "field",
+          "name": "Group_Id",
+          "def": {
+            "entityName": "GROUPS",
+            "fieldName": "Group_Id",
+            "type": "reference"
+          }
+        }
+      ],
+      "$key": [
+        "Student_Id"
+      ]
+    },
+    {
+      "name": "GROUPS",
+      "fields": [
+        {
+          "type": "field",
+          "name": "Group_Id",
+          "def": {
+            "type": "long",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "Name",
+          "def": {
+            "type": "string",
+            "size": 20
+          }
+        }
+      ],
+      "$key": [
+        "Group_Id"
+      ]
+    },
+    {
+      "name": "SUBJECTS",
+      "fields": [
+        {
+          "type": "field",
+          "name": "Subject_Id",
+          "def": {
+            "type": "long",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "Title",
+          "def": {
+            "type": "string",
+            "size": 30
+          }
+        }
+      ],
+      "$key": [
+        "Subject_Id"
+      ]
+    },
+    {
+      "name": "SUBJ_TEACH",
+      "fields": [
+        {
+          "type": "field",
+          "name": "ST_Id",
+          "def": {
+            "type": "long",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "Subject_Id",
+          "def": {
+            "entityName": "SUBJECTS",
+            "fieldName": "Subject_Id",
+            "type": "reference"
+          }
+        },
+        {
+          "type": "field",
+          "name": "Teacher_Id",
+          "def": {
+            "entityName": "TEACHERS",
+            "fieldName": "Teacher_Id",
+            "type": "reference"
+          }
+        },
+        {
+          "type": "field",
+          "name": "Group_Id",
+          "def": {
+            "entityName": "GROUPS",
+            "fieldName": "Group_Id",
+            "type": "reference"
+          }
+        }
+      ],
+      "$key": [
+        "ST_Id"
+      ]
+    },
+    {
+      "name": "TEACHERS",
+      "fields": [
+        {
+          "type": "field",
+          "name": "Teacher_Id",
+          "def": {
+            "type": "long",
+            "size": 10
+          }
+        },
+        {
+          "type": "field",
+          "name": "FirstName",
+          "def": {
+            "type": "string",
+            "size": 20
+          }
+        },
+        {
+          "type": "field",
+          "name": "LastName",
+          "def": {
+            "type": "string",
+            "size": 20
+          }
+        }
+      ],
+      "$key": [
+        "Teacher_Id"
+      ]
+    }
+  ]
+}

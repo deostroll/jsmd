@@ -1,0 +1,1050 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "MARKS"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "MarkId"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "long",
+                        "raw": "'long'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Student_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "STUDENTS"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "Student_Id"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Subject_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "SUBJECTS"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "Subject_Id"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Date"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "TimeStamp",
+                        "raw": "'TimeStamp'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Mark"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "number",
+                        "raw": "'number'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 5,
+                        "raw": "5"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "MarkId",
+                      "raw": "'MarkId'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "STUDENTS"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Student_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "long",
+                        "raw": "'long'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "FirstName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 20,
+                        "raw": "20"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "LastName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 20,
+                        "raw": "20"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Group_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "GROUPS"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "Group_Id"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "Student_Id",
+                      "raw": "'Student_Id'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "GROUPS"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Group_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "long",
+                        "raw": "'long'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Name"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 20,
+                        "raw": "20"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "Group_Id",
+                      "raw": "'Group_Id'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "SUBJECTS"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Subject_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "long",
+                        "raw": "'long'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Title"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 30,
+                        "raw": "30"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "Subject_Id",
+                      "raw": "'Subject_Id'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "SUBJ_TEACH"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "ST_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "long",
+                        "raw": "'long'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Subject_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "SUBJECTS"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "Subject_Id"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Teacher_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "TEACHERS"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "Teacher_Id"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Group_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "GROUPS"
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "Group_Id"
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "ST_Id",
+                      "raw": "'ST_Id'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "TEACHERS"
+          },
+          "init": {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "Teacher_Id"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "long",
+                        "raw": "'long'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 10,
+                        "raw": "10"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "FirstName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 20,
+                        "raw": "20"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "LastName"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ObjectExpression",
+                  "properties": [
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "type"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": "string",
+                        "raw": "'string'"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    },
+                    {
+                      "type": "Property",
+                      "key": {
+                        "type": "Identifier",
+                        "name": "size"
+                      },
+                      "computed": false,
+                      "value": {
+                        "type": "Literal",
+                        "value": 20,
+                        "raw": "20"
+                      },
+                      "kind": "init",
+                      "method": false,
+                      "shorthand": false
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              },
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Identifier",
+                  "name": "$key"
+                },
+                "computed": false,
+                "value": {
+                  "type": "ArrayExpression",
+                  "elements": [
+                    {
+                      "type": "Literal",
+                      "value": "Teacher_Id",
+                      "raw": "'Teacher_Id'"
+                    }
+                  ]
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "var"
+    }
+  ],
+  "sourceType": "script"
+}
