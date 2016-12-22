@@ -1,90 +1,74 @@
-(function(window){
+(function(window) {
 
-  // Takes input as an array of entities...
-  function Graph(input) {
-    var cache = input.reduce(function(obj, item, idx){
-      obj.indices[item.name] = idx;
-      obj.nodes.push(new Node(item));
-      return obj;
-    }, {
-      indices: {},
-      nodes: []
-    });
+  function Graph() {
+    this.nodes = [];
+    this.index = {};
+  }
+
+  Graph.prototype.add = function(entity) {
+    var node = new Node(entity);
+    var idx = this.nodes.push(node) - 1;
+    this.index[entity.name] = idx;
+  };
+
+  Graph.prototype.indexOf = function(obj) {
+    if (obj instanceof Node) {
+      return this.nodes.indexOf(obj);
+    } else if (typeof obj === 'string') {
+      return this._findIndexByName(obj);
+    } else {
+      throw new TypeError('expected string/Node object as argument');
+    }
+  };
+
+  Graph.prototype._findIndexByName = function(name) {
+    var res = this.index[name];
+    return typeof res !== 'undefined' ? res : -1;
+  };
+
+  Graph.prototype.build = function() {
+    var self = this;
+    var nodes = this.nodes;
     var edges = [];
-
-    input.forEach(function(ent, index) {
-      ent.fields.reduce(function(edgarr, field){
+    nodes.forEach(function(node, idx) {
+      var entity = node.entity;
+      entity.fields.forEach(function(field) {
         if (field.def.type === 'reference') {
-          var entityName = field.def.entityName;
-          var targetIndex = cache.indices[entityName];
-          edgarr.push([index, targetIndex]);
+          var targetIndex = self.indexOf(field.def.entityName);
+          var target = self.nodes[targetIndex];
+          edges.push(new Edge(idx, targetIndex));
+          node.edgeTo(target);
         }
-        return edgarr;
-      }, edges);
+      })
     });
-    console.log('edges:', edges);
-    edges.forEach(function(edg){
-      // cache.nodes[edg[0]].out.push(edg[1]);
-      cache.nodes[edg[0]].edgeTo(cache.nodes[edg[1]]);
-    });
-    this.cache = cache;
+    return edges;
+  };
 
-    // do a topological sort...
-    this.sort = function() {
-      var sorted = [];
-
-      var visit = function(node) {
-        if (node.marked) {
-          throw new Error('Not a DAG');
-        }
-
-        if (!node.visited) {
-          node.marked = true;
-          node.out.forEach(visit);
-          node.visited = true;
-          node.marked = false;
-          sorted.unshift(node);
-        }
-      };
-
-      cache.nodes.forEach(function(node){
-        if (!node.visited) {
-          // console.assert(node.marked);
-          visit(node);
-        }
-      });
-
-      return sorted;
-    };
-
+  Graph.prototype.toString = function() {
+    return this.nodes.map(function(n, i) {
+      var s = "(" + i + ", " + n.entity.name + ")";
+      return s;
+    }).join(',');
   }
 
   function Node(value) {
-    var self = this;
-    this.value = value;
-    // this.visited = false;
-    // this.marked = false;
-    Object.defineProperty(this, 'visited', {
-      value: false,
-      writable: true
-    });
+    this.entity = value;
+    this.in = [];
+    this.out = [];
+  }
 
-    Object.defineProperty(this, 'marked', {
-      value: false,
-      writable: true
-    });
+  Node.prototype.toString = function() {
+    return this.entity.name;
+  };
 
-    Object.defineProperty(this, 'out', {
-      enumerable: true,
-      value: []
-    });
+  Node.prototype.edgeTo = function(node) {
+    this.out.push(node);
+    node.in.push(this);
+  };
 
-    this.edgeTo = function(node) {
-      self.out.push(node);
-    };
-
+  function Edge(from, to) {
     this.toString = function() {
-      return this.value.name;
+      return "(" + from + "," + to + ")";
     };
   }
 
@@ -92,8 +76,7 @@
     module.exports = {
       Graph: Graph
     }
-  }
-  else {
+  } else {
     window.Graph = Graph;
   }
 })(this);
